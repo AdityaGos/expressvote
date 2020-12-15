@@ -24,27 +24,38 @@
                   <img class="card-img-top" src="/media/{{ i.image }}" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">{{i.title}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">{{ i.description}}</p>
                   </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{i.manifesto1}}</li>
-                    <li class="list-group-item">{{i.manifesto2}}</li>
-                    <li class="list-group-item">{{i.manifesto3}}</li>
-                  </ul>
                   <div class="card-body">
                     <a href="#" class="card-link">Card link</a>
                   </div>
                 </div>
+            </div>
+      </div>
+        <div class="col-md 4"></div>
+            <div class="mt-5 col-md-4 col order-last">
+                  <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                           <h5 class="card-title">Manifesto</h5>
+                <ul class="list-group list-group-flush">
 
+                    <li class="list-group-item">{{i.manifesto1}}</li>
+                    <li class="list-group-item">{{i.manifesto2}}</li>
+                    <li class="list-group-item">{{i.manifesto3}}</li>
+
+                  </ul>
+                      </div>
+                  </div>
+            </div>
             {% endfor %}
 <!--                {% for c in images %}-->
 
 <!--          <a href="#" class="list-group-item list-group-item-action">{{c.title}}</a>-->
 <!--            {% endfor %}-->
         </div>
-      </div>
+
 </div>
-</div>
+
 
 
 
