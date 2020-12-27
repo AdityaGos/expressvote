@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +10,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Express Vote</title>
-
 </head>
 <body>
  {%include 'navbar.html' %}
+ <style>
+    body,
+     html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #ECD8D4 !important;
+		}
+ </style>
  <div class="container">
 <div class="row">
 
-      <div class="col-md-4">
+      <div class="col-12 col-md-4">
         <!--    voting election-->
         <div class="list-group mt-5">
             {% for i in images %}
@@ -25,6 +34,8 @@
                   <div class="card-body">
                     <h5 class="card-title">{{i.title}}</h5>
                     <p class="card-text">{{ i.description}}</p>
+                       <h5 class="card-title">Party</h5>
+                      <p class="card-text">{{ i.party}}</p>
                   </div>
                   <div class="card-body">
                     <a href="#" class="card-link">Card link</a>
@@ -32,8 +43,17 @@
                 </div>
             </div>
       </div>
-        <div class="col-md 4"></div>
-            <div class="mt-5 col-md-4 col order-last">
+<!--    main description-->
+        <div class="col-md 4 mt-5">
+            {% for i in images %}
+            <h2>{{i.title}}</h2>
+            <p>{{i.fulldescripton}}</p>
+            {% endfor %}
+        <h1></h1>
+
+
+        </div>
+            <div class="mt-5 col-md-3 col order-last">
                   <div class="card" style="width: 18rem;">
                       <div class="card-body">
                            <h5 class="card-title">Manifesto</h5>
@@ -48,27 +68,23 @@
                   </div>
             </div>
             {% endfor %}
+
 <!--                {% for c in images %}-->
 
 <!--          <a href="#" class="list-group-item list-group-item-action">{{c.title}}</a>-->
 <!--            {% endfor %}-->
         </div>
+      <div class="row">
+          <div class="col-sm-6">
+              <blockquote class="twitter-tweet"><p lang="hi" dir="ltr">जयप्रकाश नारायण अंतरराष्ट्रीय हवाई अड्डा का विस्तारीकरण कार्य योजना के निरीक्षण के दौरान अधिकारियों को आवश्यक दिशा-निर्देश दिया. <a href="https://t.co/TYvlh9Bz27">https://t.co/TYvlh9Bz27</a> <a href="https://t.co/QmOEqlJhz3">pic.twitter.com/QmOEqlJhz3</a></p>&mdash; Nitish Kumar (@NitishKumar) <a href="https://twitter.com/NitishKumar/status/1338900763850940416?ref_src=twsrc%5Etfw">December 15, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+      </div>
 
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+<!--  footer class-->
 
 
 

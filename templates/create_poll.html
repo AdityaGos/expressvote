@@ -1,0 +1,15 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<h1>Create Poll</h1>
+<div class="container">
+   <form method = "POST" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Form</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </fieldset>
+    </form>
+</div>
+{% endblock %}

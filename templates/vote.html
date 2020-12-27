@@ -1,0 +1,54 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<!--<div class="container">-->
+    <h1>Vote Page</h1>
+    <div class="row">
+         <div class="col-sm-2 md-3 lg-3 ml-4">
+        <!--    voting election-->
+        <div class="list-group mt-5">
+          {% for c in loc %}
+          <a href="/location/{{c.pk}}" class="list-group-item list-group-item-action">{{c.title}}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+<style>
+    .card-img-top {
+width: 100%;
+height: 40vh;
+object-fit: cover;
+}
+</style>
+        <div class="col sm-8">
+
+            {% for i in images %}
+            <ul>
+                        <div class="card" style="max-width: 800px;">
+                            <div class="row no-gutters">
+                                <div class="col-sm-4 mt-2 mr-2 ml-2 mb-2" style="background: #868e96;">
+                                    <img src="/media/{{ i.image }}" class="card-img-top " alt="...">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{i.title}}</h5>
+                                        <h6 class="card-title">Party: {{i.party }}</h6>
+                                        <p class="card-text">{{i.description }}</p>
+                                        <a href="/candidate/{{i.id}}" class="btn btn-primary stretched-link" style="margin-right:110px">View Profile</a>
+                                        <a href="/candidate/{{i.id}}" class="btn btn-primary stretched-link" style="margin-right:50px">Vote</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </ul>
+
+        {% endfor %}
+    </div>
+
+
+
+    </div>
+
+
+<!--</div>-->
+
+{% endblock content %}
